@@ -16,7 +16,7 @@ app.use(errorHandler)
 connectDb()
     .then(() => {
         console.log('db connection succeeded.')
-        app.listen(8000,
+        app.listen(process.env.PORT || 8000,
             () => console.log('server started at 8000.'))
     })
     .catch(err => console.log(err))
