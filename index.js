@@ -9,6 +9,9 @@ const { errorHandler } = require('./middlewares')
 const app = express()
 //middleware
 app.use(bodyParser.json())
+app.get('/', (req, res) => {
+    res.send("hello world")
+})
 app.use('/api/list', employeeRoutes)
 app.use(errorHandler)
 
